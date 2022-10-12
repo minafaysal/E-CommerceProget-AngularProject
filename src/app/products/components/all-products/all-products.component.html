@@ -1,0 +1,27 @@
+<title>All Products</title>
+<div class=" m-0 p-0 container-fluid ">
+
+
+    <app-nav [data]="categories" [title]="'Categories'" (selectedValue)="filterCategory($event)"></app-nav>
+    <app-slider></app-slider>
+    <div class="box mt-5 container">
+        <div class="my-2 w-25">
+            <app-select [data]="categories" [title]="'Categories'" (selectedValue)="filterCategory($event)">
+            </app-select>
+
+        </div>
+        <div id="products_container" class="row" *ngIf="!loading&&!product_not_found">
+            <div class="col-md-3 col-sm-12" *ngFor="let item of products">
+                <app-product [data]="item" (item)="addToCart($event)"></app-product>
+            </div>
+        </div>
+        <div class="text-center w-100" *ngIf="product_not_found" style="color:red">
+
+            <h1>Product Not Found</h1>
+
+        </div>
+        <div class="text-center w-100" *ngIf="loading">
+            <app-spinner></app-spinner>
+        </div>
+    </div>
+</div>

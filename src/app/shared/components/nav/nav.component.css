@@ -1,0 +1,11 @@
+.bg-amazon-nav {
+  background-color: #232f3e;
+}
+
+.bg-amazon-yellow {
+  background-color: #ff9900;
+}
+
+.container li:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=nav.component.css.map */

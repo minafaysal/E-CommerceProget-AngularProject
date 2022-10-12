@@ -1,0 +1,4 @@
+npm install -g json-server
+
+json-server --watch products.json 
+json-server --watch products.json --port 4000

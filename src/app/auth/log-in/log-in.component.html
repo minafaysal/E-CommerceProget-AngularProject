@@ -1,0 +1,52 @@
+<div class="container  ">
+  <form class="content mt-5 mb-1 " style="padding: 25px; margin-top: 50px;" [formGroup]="LoginForm"
+    (ngSubmit)="saveData()">
+    <!-- {{userlogin|json}} -->
+    <h3 class="text-center">Sign in </h3>
+    <div class="row">
+
+      <div class="mt-2 mb-2 col-lg-12 col-12">
+        <!-- email -->
+        <label>Email:</label>
+        <input type="text" formControlName="email" class="form-control" placeholder="Your Email">
+        <!-- validat**display error  email -->
+        <div *ngIf="email?.invalid && (email?.touched|| email?.dirty)">
+          <small class="text-danger" *ngIf="email?.errors?.['required']">email is required</small>
+          <small class="text-danger" *ngIf="email?.errors?.['email']">email must be invalid </small>
+
+        </div>
+        <!-- end tag error -->
+      </div>
+      <div class="mt-2 mb-2 col-lg-12 col-12">
+        <!-- password -->
+        <label>Password:</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Enter New password">
+        <!-- validat**display error  password -->
+        <div *ngIf="password?.invalid && (password?.touched|| password?.dirty)">
+          <small class="text-danger" *ngIf="password?.errors?.['required']">password is required</small>
+          <small class="text-danger" *ngIf="password?.errors?.['maxLength']">password is max </small>
+          <small class="text-danger" *ngIf="password?.errors?.['minLength']">password is short </small>
+        </div>
+        <!-- end tag error -->
+      </div>
+      <div class=" mt-2 mb-2 col-lg-12 col-12">
+        <!-- button -->
+        <input class="col-lg-12 btn btn-warning" type="submit" />
+      </div>
+      <div class=" mt-2 mb-2 col-lg-12 col-12">
+        <!-- text -->
+        <h6>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.
+        </h6>
+      </div>
+      <div class=" mt-2 mb-2 col-lg-12 col-12">
+        <!--  -->
+        <h6> have an account ?
+
+        </h6>
+        <a href="#">Create New Account</a>
+      </div>
+
+    </div>
+  </form>
+
+</div>

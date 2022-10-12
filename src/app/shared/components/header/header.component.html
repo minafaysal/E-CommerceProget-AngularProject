@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-amazon-header  ">
+    <div class="container px-3">
+        <a class="navbar-brand  text-amazon-yellow" routerLink="/">Made In Egypt</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/delivery">Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about">About Us</a>
+                </li>
+
+            </ul>
+
+
+
+
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item" routerLink="/cart">
+                    <a class="nav-link"><i class="fa-solid fa-cart-arrow-down fa-1x"></i></a>
+                </li>
+                <li class="nav-item" routerLink="/cart">
+                    <a class="nav-link"> </a>
+                </li>
+                <li class="nav-item" routerLink="/cart">
+                    <a class="nav-link"> ||</a>
+                </li>
+
+
+                <div *ngIf="loggin ; then thenBlock; else elseBlock">
+
+                </div>
+
+
+                <ng-template #elseBlock>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="auth/log">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="auth/register">Register</a>
+                    </li>
+
+
+                </ng-template>
+
+
+                <ng-template #thenBlock>
+                    <li>
+                        <a class="nav-link" routerLink=" "> Hello {{name}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="removeLoggin()">Log Out</a>
+                    </li>
+                </ng-template>
+
+            </ul>
+        </div>
+    </div>
+
+</nav>

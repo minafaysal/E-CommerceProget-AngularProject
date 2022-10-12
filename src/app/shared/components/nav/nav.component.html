@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-amazon-nav mx-fix">
+  <div class=" container  ">
+    <a class="navbar-brand" (click)="detectChanges($event)" name="all">All</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item" *ngFor="let category of data;let i=index;">
+          <a class="nav-link" (click)="detectChanges($event)" name={{category}} *ngIf="i<7">{{category |titlecase}}</a>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <input list="browsers" class="form-control me-2" type="text" placeholder="Search"
+          (change)="detectChanges($event)">
+        <datalist id="browsers">
+          <option value="{{option}}" *ngFor="let option of data" (change)="detectChanges($event)">
+
+        </datalist>
+        <button class="btn bg-amazon-yellow" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
